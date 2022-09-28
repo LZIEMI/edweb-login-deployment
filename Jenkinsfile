@@ -27,8 +27,8 @@
                 withCredentials([usernamePassword(credentialsId: 'jfrog', usernameVariable: 'username', passwordVariable: 'password')]) {
                       sh '/usr/local/bin/helm repo add dptweb-helm-local  https://edwikifacts.jfrog.io/artifactory/edweb-helm-local --username $username --password $password'
                       sh "/usr/local/bin/helm repo update"
-                      sh "/usr/local/bin/helm install dptweb-qa --namespace qa -f values.yaml ."
-                      sh "/usr/local/bin/helm list -a --namespace qa"
+                      sh "/usr/local/bin/helm install dptweb-prod --namespace prod -f values.yaml ."
+                      sh "/usr/local/bin/helm list -a --namespace prod"
                 }
               }
           }
